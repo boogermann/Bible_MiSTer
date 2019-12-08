@@ -1,0 +1,36 @@
+*[ARM]: Advanced RISC Machine
+*[CLI]: Command Line Interface
+*[CSS]: Cascading Style Sheets
+*[dpi]: dots per inch
+*[DTD]: Document Type Definition
+*[EOF]: End Of File
+*[FAQ]: Frequently Asked Questions
+*[FTP]: File Transfer Protocol
+*[FTPS]: File Transfer Protocol Secure
+*[FPGA]: Field-Programmable Gate Array
+*[GDPR]: General Data Protection Regulation
+*[HTML]: Hypertext Markup Language
+*[HTTP]: Hypertext Transfer Protocol
+*[HTTPS]: Hypertext Transfer Protocol Secure
+*[IDE]: Integrated Development Environment
+*[IP]: Internet Protocol
+*[ISP]: Internet Service Provider
+*[JSON]: JavaScript Object Notation
+*[PC]: Personal Computer
+*[PDF]: Portable Document Format
+*[PWA]: Progressive Web Application
+*[RBF]: Raw Bit File
+*[REST]: REpresentational State Transfer
+*[SEO]: Search Engine Optimization
+*[SFTP]: SSH File Transfer Protocol
+*[SPA]: Single Page Application
+*[SSL]: Secure Sockets Layer
+*[TCP]: Transmission Control Protocol
+*[TLS]: Transport Layer Security
+*[UI]: User Interface
+*[URI]: Uniform Resource Identifier
+*[URL]: Uniform Resource Locator
+*[UTF]: Unicode Transformation Format
+*[WWW]: World Wide Web
+*[XML]: eXtensible Markup Language
+*[YAML]: Yet Another Markup Language

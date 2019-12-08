@@ -1,0 +1,5631 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Collection of guides to establishing our beloved FPGA.">
+      
+      
+        <link rel="canonical" href="https://github.com/MiSTer-devel/Bible_MiSTer/references/bash/">
+      
+      
+        <meta name="author" content="Marcus Andrade">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-\.]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+    
+    
+      
+        <title>Linux Bash - MiSTer FPGA Bible</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#260000">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.js"></script>
+    
+    <link rel="stylesheet" href="../../assets/fonts/rawline.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+      
+    
+    
+    
+      
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#bash-commands-guide" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+
+      <!-- Link to home -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://github.com/MiSTer-devel/Bible_MiSTer"
+            title="MiSTer FPGA Bible"
+            class="md-header-nav__button md-logo mister-logo-header">
+            <img src="../../images/logo.png" />
+        </a>
+      </div>
+
+      <!-- Button to toggle drawer -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
+      </div>
+
+      <!-- Header title -->
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              MiSTer FPGA Bible
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Linux Bash
+              
+            </span>
+          
+        </div>
+      </div>
+
+      <!-- Button to open search dialogue -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button"
+              for="__search"></label>
+
+          <!-- Search interface -->
+          
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+	<label class="md-search__overlay" for="__search"></label>
+	<div class="md-search__inner" role="search">
+		<form class="md-search__form" name="search">
+			<input type="text" class="md-search__input" name="query"
+				   placeholder="Search"
+				   autocapitalize="off" autocorrect="off" autocomplete="off"
+				   spellcheck="false" data-md-component="query"
+				   data-md-state="active"/> <label class="md-icon md-search__icon" for="__search"></label>
+			<button type="reset" class="md-icon md-search__icon"data-md-component="reset" tabindex="-1">&#xE5CD;<!-- close --></button>
+		</form>
+		<div class="md-search__output">
+			<div class="md-search__scrollwrap" data-md-scrollfix>
+				<div class="md-search-result" data-md-component="result">
+					<div class="md-search-result__meta">
+						Type to start searching
+					</div>
+					<ol class="md-search-result__list"></ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+        
+      </div>
+
+      <!-- Repository containing source -->
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        <!-- Determine class according to level -->
+
+
+  
+
+<!-- Tabs with outline -->
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        <!-- Home page -->
+
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+<!-- Main navigation item with nested items -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../getting-started/introduction/"
+            class="md-tabs__link">
+          Getting Started
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../hardware/introduction/"
+            class="md-tabs__link">
+          Hardware Add-Ons
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../cores/overview/"
+            class="md-tabs__link">
+          FPGA Cores
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/tips-tricks/"
+            class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../data-layout/"
+            class="md-tabs__link md-tabs__link--active">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+  
+
+  <!-- Recurse, if the first item has nested items -->
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../development/introduction/"
+            class="md-tabs__link">
+          Development
+        </a>
+      
+    </li>
+  
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+        <!-- Home page -->
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+
+  <!-- Site title -->
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://github.com/MiSTer-devel/Bible_MiSTer"
+        title="MiSTer FPGA Bible" class="md-nav__button md-logo mister-logo-nav">
+        <img src="../../images/logo.png" />
+    </a>
+    MiSTer FPGA Bible
+  </label>
+
+  <!-- Repository containing source -->
+  
+
+  <!-- Render item list -->
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home"
+        class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../blog/2019/" title="Blog/News"
+        class="md-nav__link">
+      Blog/News
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3"
+          type="checkbox" id="nav-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-3">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/introduction/" title="Introduction"
+        class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/what-you-need/" title="What you'll need"
+        class="md-nav__link">
+      What you'll need
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/how-to-setup/" title="How to Setup"
+        class="md-nav__link">
+      How to Setup
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/how-to-use/" title="Using the MiSTer"
+        class="md-nav__link">
+      Using the MiSTer
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5"
+          type="checkbox" id="nav-3-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-3-5">
+      Inputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Inputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/input-devices/" title="Input Devices"
+        class="md-nav__link">
+      Input Devices
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/joystick-mapping/" title="Joystick Mapping"
+        class="md-nav__link">
+      Joystick Mapping
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/lag-explained/" title="What About Lag?"
+        class="md-nav__link">
+      What About Lag?
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/choosing-input-devices/" title="Choosing Devices"
+        class="md-nav__link">
+      Choosing Devices
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/multi-button-mapping/" title="Multi Button"
+        class="md-nav__link">
+      Multi Button
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/bluetooth/" title="Bluetooth"
+        class="md-nav__link">
+      Bluetooth
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/inputs/keyboard-handling/" title="Keyboard Handling"
+        class="md-nav__link">
+      Keyboard Handling
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6"
+          type="checkbox" id="nav-3-6" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-3-6">
+      Network
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/network/wifi-setup/" title="WiFi"
+        class="md-nav__link">
+      WiFi
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/network/network-access/" title="FTP, SSH/SFTP"
+        class="md-nav__link">
+      FTP, SSH/SFTP
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/network/samba/" title="Samba / Windows Network Shares"
+        class="md-nav__link">
+      Samba / Windows Network Shares
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/network/internet-supported-cores/" title="Internet for Amiga/ao486"
+        class="md-nav__link">
+      Internet for Amiga/ao486
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/network/console-connection/" title="Console connection (Serial UART)"
+        class="md-nav__link">
+      Console connection (Serial UART)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7"
+          type="checkbox" id="nav-3-7" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-3-7">
+      Extra Features
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        Extra Features
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/cheat-engine/" title="Cheat Engine"
+        class="md-nav__link">
+      Cheat Engine
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/video-filters/" title="Video Filters"
+        class="md-nav__link">
+      Video Filters
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/screenshots/" title="Screenshots"
+        class="md-nav__link">
+      Screenshots
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/configuration-files/" title="Configuration Files"
+        class="md-nav__link">
+      Configuration Files
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/desktop-linux/" title="Desktop Linux"
+        class="md-nav__link">
+      Desktop Linux
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/usb-midi/" title="MIDI"
+        class="md-nav__link">
+      MIDI
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/extras/customizing/" title="Customizing your setup"
+        class="md-nav__link">
+      Customizing your setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4"
+          type="checkbox" id="nav-4" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-4">
+      Hardware Add-Ons
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Hardware Add-Ons
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/introduction/" title="Overview"
+        class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/sdram-board/" title="SDRAM Board"
+        class="md-nav__link">
+      SDRAM Board
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/io-board/" title="IO Board"
+        class="md-nav__link">
+      IO Board
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/rtc-board/" title="RTC Board"
+        class="md-nav__link">
+      RTC Board
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/usb-hub-board/" title="USB Hub"
+        class="md-nav__link">
+      USB Hub
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/adc-in/" title="ADC-in (Audio/Tape input)"
+        class="md-nav__link">
+      ADC-in (Audio/Tape input)
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7"
+          type="checkbox" id="nav-4-7" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-4-7">
+      DIY (Do it Yourself)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        DIY (Do it Yourself)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/sdram-board-assembly/" title="SDRAM Board Assembly"
+        class="md-nav__link">
+      SDRAM Board Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/io-board-assembly/" title="IO Board Assembly"
+        class="md-nav__link">
+      IO Board Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/rtc-board-assembly/" title="RTC board Assembly"
+        class="md-nav__link">
+      RTC board Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/usb-hub-assembly/" title="USB Hub Assembly"
+        class="md-nav__link">
+      USB Hub Assembly
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7-5"
+          type="checkbox" id="nav-4-7-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-4-7-5">
+      Cases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-4-7-5">
+        Cases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/mister-case/" title="3D-printed"
+        class="md-nav__link">
+      3D-printed
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../hardware/assembly/pi-top-v1/" title="Pi-Top (v1)"
+        class="md-nav__link">
+      Pi-Top (v1)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5"
+          type="checkbox" id="nav-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5">
+      FPGA Cores
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        FPGA Cores
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/overview/" title="Overview"
+        class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2"
+          type="checkbox" id="nav-5-2" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2">
+      Computers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Computers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-1"
+          type="checkbox" id="nav-5-2-1" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2-1">
+      Historical
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-1">
+        Historical
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/historical/altair8800/" title="Altair 8800"
+        class="md-nav__link">
+      Altair 8800
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/historical/pdp1/" title="DEC PDP-1"
+        class="md-nav__link">
+      DEC PDP-1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-2"
+          type="checkbox" id="nav-5-2-2" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2-2">
+      Eastern
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-2">
+        Eastern
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/apogee/" title="Apogee"
+        class="md-nav__link">
+      Apogee
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/bk0011m/" title="BK0011M"
+        class="md-nav__link">
+      BK0011M
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/orao/" title="Orao"
+        class="md-nav__link">
+      Orao
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/specialist/" title="Vector 06C"
+        class="md-nav__link">
+      Vector 06C
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/tsconf/" title="Specialist/MX"
+        class="md-nav__link">
+      Specialist/MX
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/eastern/vector-06c/" title="TSConf"
+        class="md-nav__link">
+      TSConf
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-3"
+          type="checkbox" id="nav-5-2-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2-3">
+      Early
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-3">
+        Early
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/apple-i/" title="Apple I"
+        class="md-nav__link">
+      Apple I
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/aquarius/" title="Aquarius"
+        class="md-nav__link">
+      Aquarius
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/atari800/" title="Atari 800XL"
+        class="md-nav__link">
+      Atari 800XL
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/c16/" title="Commodore 16, Plus/4"
+        class="md-nav__link">
+      Commodore 16, Plus/4
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/pet2001/" title="Commodore PET"
+        class="md-nav__link">
+      Commodore PET
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/ht1080z/" title="ht1080z / TRS-80 Model 1"
+        class="md-nav__link">
+      ht1080z / TRS-80 Model 1
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/jupiter/" title="Jupiter Ace"
+        class="md-nav__link">
+      Jupiter Ace
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/multicomp/" title="MultiComp"
+        class="md-nav__link">
+      MultiComp
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/sharpmz/" title="Sharp MZ Series"
+        class="md-nav__link">
+      Sharp MZ Series
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/ti-99_4a/" title="TI-99/4A"
+        class="md-nav__link">
+      TI-99/4A
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/early/zx81/" title="ZX81"
+        class="md-nav__link">
+      ZX81
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-4"
+          type="checkbox" id="nav-5-2-4" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2-4">
+      8-bit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-4">
+        8-bit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/amstrad/" title="Amstrad CPC 6128"
+        class="md-nav__link">
+      Amstrad CPC 6128
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/apple-ii/" title="Apple II+"
+        class="md-nav__link">
+      Apple II+
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/bbcmicro/" title="BBC Micro B,Master"
+        class="md-nav__link">
+      BBC Micro B,Master
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/c64/" title="Commodore 64, Ultimax"
+        class="md-nav__link">
+      Commodore 64, Ultimax
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/vic20/" title="Commodore VIC-20"
+        class="md-nav__link">
+      Commodore VIC-20
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/msx/" title="MSX"
+        class="md-nav__link">
+      MSX
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/sam-coupe/" title="SAM Coupe"
+        class="md-nav__link">
+      SAM Coupe
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/ql/" title="Sinclair QL"
+        class="md-nav__link">
+      Sinclair QL
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/8-bit/zx-spectrum/" title="ZX Spectrum"
+        class="md-nav__link">
+      ZX Spectrum
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-5"
+          type="checkbox" id="nav-5-2-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-2-5">
+      16-bit and 32-bit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-5">
+        16-bit and 32-bit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/16-32-bit/archie/" title="Acorn Archimedes"
+        class="md-nav__link">
+      Acorn Archimedes
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/16-32-bit/ao486/" title="ao486 (PC 386)"
+        class="md-nav__link">
+      ao486 (PC 386)
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/16-32-bit/minimig-aga/" title="Amiga"
+        class="md-nav__link">
+      Amiga
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/16-32-bit/macplus/" title="Apple Macintosh Plus"
+        class="md-nav__link">
+      Apple Macintosh Plus
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/computers/16-32-bit/x68000/" title="X68000"
+        class="md-nav__link">
+      X68000
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3"
+          type="checkbox" id="nav-5-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3">
+      Consoles
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Consoles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-1"
+          type="checkbox" id="nav-5-3-1" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3-1">
+      1st Gen
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-1">
+        1st Gen
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pong/" title="Pong"
+        class="md-nav__link">
+      Pong
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2"
+          type="checkbox" id="nav-5-3-2" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3-2">
+      2nd Gen
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-2">
+        2nd Gen
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/2nd-gen/astrocade/" title="Astrocade"
+        class="md-nav__link">
+      Astrocade
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/2nd-gen/atari2600/" title="Atari 2600"
+        class="md-nav__link">
+      Atari 2600
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/2nd-gen/atari5200/" title="Atari 5200"
+        class="md-nav__link">
+      Atari 5200
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/2nd-gen/odyssey2/" title="Odyssey2"
+        class="md-nav__link">
+      Odyssey2
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/2nd-gen/vectrex/" title="Vectrex"
+        class="md-nav__link">
+      Vectrex
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-3"
+          type="checkbox" id="nav-5-3-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3-3">
+      3rd Gen
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-3">
+        3rd Gen
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/3rd-gen/colecovision/" title="ColecoVision/SG-1000"
+        class="md-nav__link">
+      ColecoVision/SG-1000
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/3rd-gen/sms/" title="Master System"
+        class="md-nav__link">
+      Master System
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/3rd-gen/nes/" title="NES"
+        class="md-nav__link">
+      NES
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4"
+          type="checkbox" id="nav-5-3-4" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3-4">
+      4th Gen
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-4">
+        4th Gen
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/gameboy/" title="Gameboy/Gameboy Color"
+        class="md-nav__link">
+      Gameboy/Gameboy Color
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/3rd-gen/sms/" title="Game Gear"
+        class="md-nav__link">
+      Game Gear
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/genesis/" title="Genesis/Megadrive"
+        class="md-nav__link">
+      Genesis/Megadrive
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/megacd/" title="MegaCD"
+        class="md-nav__link">
+      MegaCD
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/neogeo/" title="NeoGeo"
+        class="md-nav__link">
+      NeoGeo
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/snes/" title="SNES"
+        class="md-nav__link">
+      SNES
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/4th-gen/turbografx16/" title="TurboGrafx16/PC Engine"
+        class="md-nav__link">
+      TurboGrafx16/PC Engine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-5"
+          type="checkbox" id="nav-5-3-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-3-5">
+      6th Gen
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-5">
+        6th Gen
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/consoles/6th-gen/gba/" title="Gameboy Advance"
+        class="md-nav__link">
+      Gameboy Advance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4"
+          type="checkbox" id="nav-5-4" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-4">
+      Arcades
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Arcades
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-1"
+          type="checkbox" id="nav-5-4-1" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-4-1">
+      #-D
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-4-1">
+        #-D
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/1942/" title="1942"
+        class="md-nav__link">
+      1942
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/1943/" title="1943"
+        class="md-nav__link">
+      1943
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/alibaba/" title="Alibaba"
+        class="md-nav__link">
+      Alibaba
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/amidar/" title="Amidar"
+        class="md-nav__link">
+      Amidar
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/arkanoid/" title="Arkanoid"
+        class="md-nav__link">
+      Arkanoid
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/asteroids/" title="Asteroids"
+        class="md-nav__link">
+      Asteroids
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/asteroidsdeluxe/" title="Asteroids Deluxe"
+        class="md-nav__link">
+      Asteroids Deluxe
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/azurian/" title="Azurian"
+        class="md-nav__link">
+      Azurian
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/bagman/" title="Bagman"
+        class="md-nav__link">
+      Bagman
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/berzerk/" title="Berzerk"
+        class="md-nav__link">
+      Berzerk
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/birdiy/" title="Birdiy"
+        class="md-nav__link">
+      Birdiy
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/blackhole/" title="Black Hole"
+        class="md-nav__link">
+      Black Hole
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/bombjack/" title="Bomb Jack"
+        class="md-nav__link">
+      Bomb Jack
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/botanic/" title="Botanic"
+        class="md-nav__link">
+      Botanic
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/bubbles/" title="Bubbles"
+        class="md-nav__link">
+      Bubbles
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/burgertime/" title="Burger Time"
+        class="md-nav__link">
+      Burger Time
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/burningrubber/" title="Burning Rubber"
+        class="md-nav__link">
+      Burning Rubber
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/canyonbomber/" title="Canyon Bomber"
+        class="md-nav__link">
+      Canyon Bomber
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/catacomb/" title="Catacomb"
+        class="md-nav__link">
+      Catacomb
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/centipede/" title="Centipede"
+        class="md-nav__link">
+      Centipede
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/colony7/" title="Colony7"
+        class="md-nav__link">
+      Colony7
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/computerspace/" title="Computer Space"
+        class="md-nav__link">
+      Computer Space
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/cosmicavenger/" title="Cosmic Avenger"
+        class="md-nav__link">
+      Cosmic Avenger
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/crazyclimber/" title="Crazy Climber"
+        class="md-nav__link">
+      Crazy Climber
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/crazykong/" title="Crazy Kong"
+        class="md-nav__link">
+      Crazy Kong
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/crushroller/" title="Crush Roller"
+        class="md-nav__link">
+      Crush Roller
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/defender/" title="Defender"
+        class="md-nav__link">
+      Defender
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/devilfish/" title="Devilfish"
+        class="md-nav__link">
+      Devilfish
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/digdug/" title="Dig Dug"
+        class="md-nav__link">
+      Dig Dug
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/dominos/" title="Dominos"
+        class="md-nav__link">
+      Dominos
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/donkeykong/" title="Donkey Kong"
+        class="md-nav__link">
+      Donkey Kong
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/dorodon/" title="Dorodon"
+        class="md-nav__link">
+      Dorodon
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/dreamshopper/" title="Dream Shopper"
+        class="md-nav__link">
+      Dream Shopper
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/druaga/" title="Druaga"
+        class="md-nav__link">
+      Druaga
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-2"
+          type="checkbox" id="nav-5-4-2" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-4-2">
+      E-0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-4-2">
+        E-0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/eeekk/" title="Eeekk"
+        class="md-nav__link">
+      Eeekk
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/eggor/" title="Eggor"
+        class="md-nav__link">
+      Eggor
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/eyes/" title="Eyes"
+        class="md-nav__link">
+      Eyes
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/frenzy/" title="Frenzy"
+        class="md-nav__link">
+      Frenzy
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/frogger/" title="Frogger"
+        class="md-nav__link">
+      Frogger
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/galaga/" title="Galaga"
+        class="md-nav__link">
+      Galaga
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/galaxian/" title="Galaxian"
+        class="md-nav__link">
+      Galaxian
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/gaplus/" title="Gaplus"
+        class="md-nav__link">
+      Gaplus
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/gng/" title="GnG"
+        class="md-nav__link">
+      GnG
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/gorkans/" title="Gorkans"
+        class="md-nav__link">
+      Gorkans
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/jin/" title="Jin"
+        class="md-nav__link">
+      Jin
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/joust/" title="Joust"
+        class="md-nav__link">
+      Joust
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/ladybug/" title="Lady Bug"
+        class="md-nav__link">
+      Lady Bug
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/lizardwizard/" title="Lizard Wizard"
+        class="md-nav__link">
+      Lizard Wizard
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/lunarlander/" title="Lunar Lander"
+        class="md-nav__link">
+      Lunar Lander
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/mayday/" title="Mayday"
+        class="md-nav__link">
+      Mayday
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/mooncresta/" title="Moon Cresta"
+        class="md-nav__link">
+      Moon Cresta
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/moonpatrol/" title="Moon Patrol"
+        class="md-nav__link">
+      Moon Patrol
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/mrdonightmare/" title="MrDo Nightmare"
+        class="md-nav__link">
+      MrDo Nightmare
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/mrtnt/" title="Mr TNT"
+        class="md-nav__link">
+      Mr TNT
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/mspacman/" title="MsPacman"
+        class="md-nav__link">
+      MsPacman
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/ninjakun/" title="Ninja Kun"
+        class="md-nav__link">
+      Ninja Kun
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/omega/" title="Omega"
+        class="md-nav__link">
+      Omega
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/orbitron/" title="Orbitron"
+        class="md-nav__link">
+      Orbitron
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4-3"
+          type="checkbox" id="nav-5-4-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-4-3">
+      P-Z
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="3">
+      <label class="md-nav__title" for="nav-5-4-3">
+        P-Z
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pacman/" title="Pacman"
+        class="md-nav__link">
+      Pacman
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pacmanclub/" title="Pacman Club"
+        class="md-nav__link">
+      Pacman Club
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pacmanicminer/" title="Pacmanic Miner"
+        class="md-nav__link">
+      Pacmanic Miner
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pacmanplus/" title="Pacman Plus"
+        class="md-nav__link">
+      Pacman Plus
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pengo/" title="Pengo"
+        class="md-nav__link">
+      Pengo
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/phoenix/" title="Phoenix"
+        class="md-nav__link">
+      Phoenix
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pickin/" title="Pickin"
+        class="md-nav__link">
+      Pickin
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pisces/" title="Pisces"
+        class="md-nav__link">
+      Pisces
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pleiads/" title="Pleiads"
+        class="md-nav__link">
+      Pleiads
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pong/" title="Pong"
+        class="md-nav__link">
+      Pong
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/ponpoko/" title="Ponpoko"
+        class="md-nav__link">
+      Ponpoko
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/pooyan/" title="Pooyan"
+        class="md-nav__link">
+      Pooyan
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/rallyx/" title="RallyX"
+        class="md-nav__link">
+      RallyX
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/riverpatrol/" title="River Patrol"
+        class="md-nav__link">
+      River Patrol
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/robotron/" title="Robotron"
+        class="md-nav__link">
+      Robotron
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/scramble/" title="Scramble"
+        class="md-nav__link">
+      Scramble
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/silverland/" title="Silver Land"
+        class="md-nav__link">
+      Silver Land
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/sinistar/" title="Sinistar"
+        class="md-nav__link">
+      Sinistar
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/snapjack/" title="Snap Jack"
+        class="md-nav__link">
+      Snap Jack
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/splat/" title="Splat"
+        class="md-nav__link">
+      Splat
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/sprint1/" title="Sprint1"
+        class="md-nav__link">
+      Sprint1
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/sprint2/" title="Sprint2"
+        class="md-nav__link">
+      Sprint2
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/squash/" title="Squash"
+        class="md-nav__link">
+      Squash
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/stargate/" title="Stargate"
+        class="md-nav__link">
+      Stargate
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/superbreakout/" title="Super Breakout"
+        class="md-nav__link">
+      Super Breakout
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/superglob/" title="Super Glob"
+        class="md-nav__link">
+      Super Glob
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/theend/" title="The End"
+        class="md-nav__link">
+      The End
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/timepilot/" title="Time Pilot"
+        class="md-nav__link">
+      Time Pilot
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/traverseusa/" title="Traverse USA"
+        class="md-nav__link">
+      Traverse USA
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/uniwars/" title="Uniwars"
+        class="md-nav__link">
+      Uniwars
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/vanvancar/" title="Van Van Car"
+        class="md-nav__link">
+      Van Van Car
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/victory/" title="Victory"
+        class="md-nav__link">
+      Victory
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/warofthebugs/" title="War Of The Bugs"
+        class="md-nav__link">
+      War Of The Bugs
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/woodpecker/" title="Woodpecker"
+        class="md-nav__link">
+      Woodpecker
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/xevious/" title="Xevious"
+        class="md-nav__link">
+      Xevious
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/arcades/zigzag/" title="Zig Zag"
+        class="md-nav__link">
+      Zig Zag
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5"
+          type="checkbox" id="nav-5-5" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-5-5">
+      Service
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Service
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/service/boot-menu/" title="Boot Menu"
+        class="md-nav__link">
+      Boot Menu
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../cores/service/sdram-board-test/" title="SDRAM board test"
+        class="md-nav__link">
+      SDRAM board test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6"
+          type="checkbox" id="nav-6" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-6">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/tips-tricks/" title="Tips and Tricks"
+        class="md-nav__link">
+      Tips and Tricks
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/diagonal-input-fix/" title="Diagonal Input Fix"
+        class="md-nav__link">
+      Diagonal Input Fix
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/videos/" title="Videos"
+        class="md-nav__link">
+      Videos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7"
+          type="checkbox" id="nav-7" checked />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-7">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../data-layout/" title="Data Layout"
+        class="md-nav__link">
+      Data Layout
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--active">
+    
+
+    <!-- Active checkbox expands items contained within nested section -->
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
+        type="checkbox" id="__toc" />
+
+    <!-- Hack: see partials/toc.html for more information -->
+    
+      
+    
+
+    <!-- Render table of contents, if not empty -->
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linux Bash
+      </label>
+    
+    <a href="./" title="Linux Bash"
+        class="md-nav__link md-nav__link--active">
+      Linux Bash
+    </a>
+
+    <!-- Show table of contents -->
+    
+      
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary">
+  
+  <!--
+    Hack: check whether the content contains a h1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+    
+  
+
+  <!-- Render item list -->
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#basic-commands" class="md-nav__link">
+		Basic Commands
+	</a>
+	
+	<!-- Render nested item list -->
+	
+	<nav class="md-nav">
+		<ul class="md-nav__list">
+			 <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#ls" class="md-nav__link">
+		LS
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#man" class="md-nav__link">
+		MAN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#env" class="md-nav__link">
+		ENV
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chmod" class="md-nav__link">
+		CHMOD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chown" class="md-nav__link">
+		CHOWN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#path" class="md-nav__link">
+		PATH
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#grep" class="md-nav__link">
+		GREP
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#awk" class="md-nav__link">
+		AWK
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#open" class="md-nav__link">
+		OPEN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chgrp" class="md-nav__link">
+		CHGRP
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#pwd" class="md-nav__link">
+		PWD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cd" class="md-nav__link">
+		CD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#home" class="md-nav__link">
+		HOME
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#nano" class="md-nav__link">
+		NANO
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#find" class="md-nav__link">
+		FIND
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#mkdir" class="md-nav__link">
+		MKDIR
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#mv" class="md-nav__link">
+		MV
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#rm" class="md-nav__link">
+		RM
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#rmdir" class="md-nav__link">
+		RMDIR
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#touch" class="md-nav__link">
+		TOUCH
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cat" class="md-nav__link">
+		CAT
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#wc" class="md-nav__link">
+		WC
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#head" class="md-nav__link">
+		HEAD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#tail" class="md-nav__link">
+		TAIL
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#more" class="md-nav__link">
+		MORE
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#less" class="md-nav__link">
+		LESS
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#nl" class="md-nav__link">
+		NL
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li> 
+		</ul>
+	</nav>
+	
+</li>
+      
+        <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cheat-sheet" class="md-nav__link">
+		Cheat Sheet
+	</a>
+	
+	<!-- Render nested item list -->
+	
+	<nav class="md-nav">
+		<ul class="md-nav__list">
+			 <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#list-number-of-files-on-a-directory" class="md-nav__link">
+		List number of files on a directory
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li> 
+		</ul>
+	</nav>
+	
+</li>
+      
+
+      <!-- Source files -->
+      
+		
+    </ul>
+  
+</nav>
+    
+  </li>
+
+<!-- Main navigation item -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting"
+        class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8"
+          type="checkbox" id="nav-8" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-8">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/introduction/" title="Overview"
+        class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/test-builds/" title="Test Builds"
+        class="md-nav__link">
+      Test Builds
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item md-nav__item--nested">
+
+    <!-- Active checkbox expands items contained within nested section -->
+	  
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3"
+          type="checkbox" id="nav-8-3" />
+    
+
+    <!-- Expand active pages -->
+    <label class="md-nav__link" for="nav-8-3">
+      FPGA
+    </label>
+    <nav class="md-nav" data-md-component="collapsible"
+        data-md-level="2">
+      <label class="md-nav__title" for="nav-8-3">
+        FPGA
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+        <!-- Render nested item list -->
+        
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/fpga/" title="What You'll need"
+        class="md-nav__link">
+      What You'll need
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/core-porting/" title="Core Porting"
+        class="md-nav__link">
+      Core Porting
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/configuration-string/" title="Configuration String"
+        class="md-nav__link">
+      Configuration String
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/arm/" title="ARM"
+        class="md-nav__link">
+      ARM
+    </a>
+  </li>
+
+        
+          
+          
+          <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../development/usb-blaster/" title="USB Blaster (Debugging)"
+        class="md-nav__link">
+      USB Blaster (Debugging)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+<!-- Currently active page -->
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../core-status/" title="Core Status"
+        class="md-nav__link">
+      Core Status
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../support/" title="Support"
+        class="md-nav__link">
+      Support
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ"
+        class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../our-thanks/" title="Our Thanks"
+        class="md-nav__link">
+      Our Thanks
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" title="Changelog"
+        class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../todo/" title="TODO"
+        class="md-nav__link">
+      TODO
+    </a>
+  </li>
+
+    
+      
+      
+      <!-- Determine class according to level -->
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../../license/" title="License"
+        class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary">
+  
+  <!--
+    Hack: check whether the content contains a h1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+    
+  
+
+  <!-- Render item list -->
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#basic-commands" class="md-nav__link">
+		Basic Commands
+	</a>
+	
+	<!-- Render nested item list -->
+	
+	<nav class="md-nav">
+		<ul class="md-nav__list">
+			 <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#ls" class="md-nav__link">
+		LS
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#man" class="md-nav__link">
+		MAN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#env" class="md-nav__link">
+		ENV
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chmod" class="md-nav__link">
+		CHMOD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chown" class="md-nav__link">
+		CHOWN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#path" class="md-nav__link">
+		PATH
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#grep" class="md-nav__link">
+		GREP
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#awk" class="md-nav__link">
+		AWK
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#open" class="md-nav__link">
+		OPEN
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#chgrp" class="md-nav__link">
+		CHGRP
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#pwd" class="md-nav__link">
+		PWD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cd" class="md-nav__link">
+		CD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#home" class="md-nav__link">
+		HOME
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#nano" class="md-nav__link">
+		NANO
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#find" class="md-nav__link">
+		FIND
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#mkdir" class="md-nav__link">
+		MKDIR
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#mv" class="md-nav__link">
+		MV
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#rm" class="md-nav__link">
+		RM
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#rmdir" class="md-nav__link">
+		RMDIR
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#touch" class="md-nav__link">
+		TOUCH
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cat" class="md-nav__link">
+		CAT
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#wc" class="md-nav__link">
+		WC
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#head" class="md-nav__link">
+		HEAD
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#tail" class="md-nav__link">
+		TAIL
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#more" class="md-nav__link">
+		MORE
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#less" class="md-nav__link">
+		LESS
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li>  <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#nl" class="md-nav__link">
+		NL
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li> 
+		</ul>
+	</nav>
+	
+</li>
+      
+        <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#cheat-sheet" class="md-nav__link">
+		Cheat Sheet
+	</a>
+	
+	<!-- Render nested item list -->
+	
+	<nav class="md-nav">
+		<ul class="md-nav__list">
+			 <!-- Table of contents item -->
+<li class="md-nav__item">
+	<a href="#list-number-of-files-on-a-directory" class="md-nav__link">
+		List number of files on a directory
+	</a>
+	
+	<!-- Render nested item list -->
+	
+</li> 
+		</ul>
+	</nav>
+	
+</li>
+      
+
+      <!-- Source files -->
+      
+		
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            
+                
+            
+            
+                
+            
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="bash-commands-guide">Bash Commands Guide<a class="headerlink" href="#bash-commands-guide" title="Permanent link">&para;</a></h1>
+<p>Bash is an interactive command line interpreter or shell.
+This is a list for time-saving purposes with common usage bash commands and what they are.</p>
+<h2 id="basic-commands">Basic Commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h2>
+<h3 id="ls">LS<a class="headerlink" href="#ls" title="Permanent link">&para;</a></h3>
+<p>Lists the folder and file names in the current working directory.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls -a  <span class="c1"># Lists all files including hidden files </span>
+ls -A  <span class="c1"># Lists all files, including hidden files, except a top directory</span>
+ls -F  <span class="c1"># Add an indicator (one of */=&gt;@|) to entries</span>
+ls -S  <span class="c1"># Sort by file size</span>
+ls -al <span class="c1"># Provides a list of all the files in the same directory</span>
+ls -l  <span class="c1"># Use a long listing format</span>
+ls -nl <span class="c1"># Use a long listing format with user ID</span>
+ls -c  <span class="c1"># List contents by columns</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="man">MAN<a class="headerlink" href="#man" title="Permanent link">&para;</a></h3>
+<p>It is the interface used to view the system’s reference manuals.man ls also displays all the options available for running the command.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>man -h <span class="c1"># Print a help message and exit</span>
+man -V <span class="c1"># Display version information and exit</span>
+man -C <span class="c1"># Use the configuration file rather than the default of ~/.manpath.</span>
+man -d <span class="c1"># Print debugging information.</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="env">ENV<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
+<p>Returns a list of the environment variables for the current user.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>env
+</pre></div>
+</td></tr></table></p>
+<h3 id="chmod">CHMOD<a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
+<p>To change the permissions of files or directories.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chmod <span class="m">777</span> <span class="c1"># Anyone can read, write and execute chmod 777 my_file</span>
+chmod <span class="m">755</span> <span class="c1"># Files should be readable and executable by others, but only changeable by the issuing user</span>
+chmod <span class="m">700</span> <span class="c1"># Only the user can do anything to the file</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="chown">CHOWN<a class="headerlink" href="#chown" title="Permanent link">&para;</a></h3>
+<p>Changes ownership of files and directories.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chown --help <span class="o">&amp;&amp;</span> chown --version
+</pre></div>
+</td></tr></table></p>
+<h3 id="path">PATH<a class="headerlink" href="#path" title="Permanent link">&para;</a></h3>
+<p>It stores a list of directories separated by a colon.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="grep">GREP<a class="headerlink" href="#grep" title="Permanent link">&para;</a></h3>
+<p>Searches files for lines that match a pattern and returns the results.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep <span class="s2">&quot;keyword&quot;</span> file    <span class="c1"># Searches for the given string in a single file</span>
+grep -i <span class="s2">&quot;keyword&quot;</span> file <span class="c1"># Enables the command to be case insensitive</span>
+grep -R <span class="s2">&quot;keyword&quot;</span> file <span class="c1"># Searches all files in a directory and outputs filenames and lines containing matched results</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="awk">AWK<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h3>
+<p>Extracts just a list of specific things.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>awk <span class="o">{</span>keyword<span class="o">}</span> file.tx
+</pre></div>
+</td></tr></table></p>
+<h3 id="open">OPEN<a class="headerlink" href="#open" title="Permanent link">&para;</a></h3>
+<p>Opens current folder in finder.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>open .
+</pre></div>
+</td></tr></table></p>
+<h3 id="chgrp">CHGRP<a class="headerlink" href="#chgrp" title="Permanent link">&para;</a></h3>
+<p>Changes the group of the file and directory.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chgrp groupname file.txt
+</pre></div>
+</td></tr></table></p>
+<h3 id="pwd">PWD<a class="headerlink" href="#pwd" title="Permanent link">&para;</a></h3>
+<p>Command prints the name of working directory.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="cd">CD<a class="headerlink" href="#cd" title="Permanent link">&para;</a></h3>
+<p>Changes the current working directory.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /     <span class="c1"># Goes to the root directory</span>
+<span class="nb">cd</span> ..    <span class="c1"># Goes to a parent directory</span>
+<span class="nb">cd</span>       <span class="c1"># Goes to the user&#39;s home directory when executed without the parameter</span>
+<span class="nb">cd</span> ~root <span class="c1"># Goes to the user&#39;s home directory when the user name is given after the ‘~’</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="home">HOME<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
+<p>Displays the path of the home directory.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="nv">$HOME</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="nano">NANO<a class="headerlink" href="#nano" title="Permanent link">&para;</a></h3>
+<p>Command line text editor and only accepts keyboard input.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>nano myscript.sh
+</pre></div>
+</td></tr></table></p>
+<h3 id="find">FIND<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<p>Searches for files and directories.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>find directory -name filename <span class="c1"># searches the file by name</span>
+find directory -cnewer file   <span class="c1"># The file was last changed more recently than the file was modified</span>
+find directory -amin n        <span class="c1"># The file was last accessed n minutes ago</span>
+find directory -cmin n        <span class="c1"># The file was last changed n minutes ago</span>
+find directory -atime n       <span class="c1"># The file was last accessed more n days ago</span>
+find directory -mtime n       <span class="c1"># File’s data was last modified n days ago</span>
+find directory -ctime n       <span class="c1"># The file was last changed more than n days ago</span>
+find directory -print         <span class="c1"># Displays the path name of the files found by using the rest of the criteria</span>
+find directory -exec          <span class="c1"># Executes commands on the resulting search results</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="mkdir">MKDIR<a class="headerlink" href="#mkdir" title="Permanent link">&para;</a></h3>
+<p>Creates directories with this command.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir folder: This <span class="nb">command</span> would create the sub folders
+</pre></div>
+</td></tr></table>
+
+<h3 id="mv">MV<a class="headerlink" href="#mv" title="Permanent link">&para;</a></h3>
+<p>Moves a file or directory as another file and directory.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mv -i <span class="nb">source</span> destination <span class="c1"># Prompt before overwriting an existing file</span>
+mv -f <span class="nb">source</span> destination <span class="c1"># Always overwrite existing files without prompting</span>
+mv -n <span class="nb">source</span> destination <span class="c1"># Never overwrite any existing file</span>
+mv -v <span class="nb">source</span> destination <span class="c1"># Print source and destination files</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="rm">RM<a class="headerlink" href="#rm" title="Permanent link">&para;</a></h3>
+<p>Removes objects.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rm -f file      <span class="c1"># Does not ask questions during deletion, does not provide information for a non-existent file</span>
+rm -i file      <span class="c1"># Prompt before deleting files</span>
+rm -r directory <span class="c1"># Deletes the contents of directories and subdirectories consecutively</span>
+rm -v file      <span class="c1"># Gives more detailed information about the remove process</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="rmdir">RMDIR<a class="headerlink" href="#rmdir" title="Permanent link">&para;</a></h3>
+<p>Removes directory, this command only works if the folders are empty.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rmdir -p directoryname
+</pre></div>
+</td></tr></table>
+
+<h3 id="touch">TOUCH<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
+<p>Creates or opens a file and saves it without any change to the file contents.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>touch -a file <span class="c1"># Updates file access time</span>
+touch -c file <span class="c1"># If the file does not exist, it creates the file</span>
+touch -m file <span class="c1"># Changes the file modification time</span>
+touch -t file <span class="c1"># Changes the file access or replacement time as specified</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="cat">CAT<a class="headerlink" href="#cat" title="Permanent link">&para;</a></h3>
+<p>Shows the contents of the files.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat -n file <span class="c1"># Prints the contents of the file on the screen by giving a number to all lines</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="wc">WC<a class="headerlink" href="#wc" title="Permanent link">&para;</a></h3>
+<p>Prints newline, word, and byte counts for each FILE, and a total if more than one FILE is specified
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wc -l file <span class="c1"># Returns the number of rows</span>
+wc -m file <span class="c1"># Returns the number of characters</span>
+wc -w file <span class="c1"># Counts the number of words</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="head">HEAD<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
+<p>Displays the first lines of lines of the file.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>head file: Shows the first couple lines
+</pre></div>
+</td></tr></table></p>
+<h3 id="tail">TAIL<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
+<p>Displays the last couple of lines of the file.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tail file: Shows you the last couple lines
+</pre></div>
+</td></tr></table></p>
+<h3 id="more">MORE<a class="headerlink" href="#more" title="Permanent link">&para;</a></h3>
+<p>The contents of the file are used to display the page page.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>more file
+</pre></div>
+</td></tr></table></p>
+<h3 id="less">LESS<a class="headerlink" href="#less" title="Permanent link">&para;</a></h3>
+<p>Allows backward movement in the file as well as forward movement.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>less file
+</pre></div>
+</td></tr></table>
+
+<h3 id="nl">NL<a class="headerlink" href="#nl" title="Permanent link">&para;</a></h3>
+<p>Adds a line number per line.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>nl file
+</pre></div>
+</td></tr></table>
+
+<h2 id="cheat-sheet">Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="list-number-of-files-on-a-directory">List number of files on a directory<a class="headerlink" href="#list-number-of-files-on-a-directory" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls -l . <span class="p">|</span> egrep -c <span class="s1">&#39;^-&#39;</span>
+
+<span class="c1"># savefile list to txt</span>
+ls -p <span class="p">|</span> grep -v / &gt; filelist79.txt
+
+<span class="c1">#echo mv &quot;$f&quot; &quot;${f// /_}&quot;</span>
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+	
+	<div class="md-footer-nav">
+		<nav class="md-footer-nav__inner md-grid">
+			
+			<a href="../data-layout/" title="Data Layout" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+				<div class="md-flex__cell md-flex__cell--shrink">
+					<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+				</div>
+				<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Data Layout
+              </span>
+				</div>
+			</a>
+			 
+			<a href="../troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+				<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Troubleshooting
+              </span>
+				</div>
+				<div class="md-flex__cell md-flex__cell--shrink">
+					<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+				</div>
+			</a>
+			
+		</nav>
+	</div>
+	
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
