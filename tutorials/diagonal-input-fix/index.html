@@ -13,7 +13,7 @@
         <meta name="description" content="Collection of guides to establishing our beloved FPGA.">
       
       
-        <link rel="canonical" href="https://github.com/MiSTer-devel/Bible_MiSTer/tutorials/diagonal-input-fix/">
+        <link rel="canonical" href="https://boogermann.github.io/Bible_MiSTer/tutorials/diagonal-input-fix/">
       
       
         <meta name="author" content="Marcus Andrade">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Diagonal Input Fix - MiSTer FPGA Bible</title>
+        <title>Enhanced4Way Module for 4-way systems - MiSTer FPGA Bible</title>
       
     
     
@@ -102,7 +102,7 @@
 
       <!-- Link to home -->
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://github.com/MiSTer-devel/Bible_MiSTer"
+        <a href="https://boogermann.github.io/Bible_MiSTer"
             title="MiSTer FPGA Bible"
             class="md-header-nav__button md-logo mister-logo-header">
             <img src="../../images/logo.png" />
@@ -125,7 +125,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Diagonal Input Fix
+                Enhanced4Way Module for 4-way systems
               
             </span>
           
@@ -178,10 +178,8 @@
         <!-- Determine class according to level -->
 
 
-  
-
 <!-- Tabs with outline -->
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -189,7 +187,7 @@
 
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         Home
       </a>
     
@@ -261,7 +259,7 @@
     <li class="md-tabs__item">
       
         <a href="../tips-tricks/"
-            class="md-tabs__link md-tabs__link--active">
+            class="md-tabs__link">
           Tutorials
         </a>
       
@@ -340,7 +338,7 @@
 
   <!-- Site title -->
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://github.com/MiSTer-devel/Bible_MiSTer"
+    <a href="https://boogermann.github.io/Bible_MiSTer"
         title="MiSTer FPGA Bible" class="md-nav__button md-logo mister-logo-nav">
         <img src="../../images/logo.png" />
     </a>
@@ -4252,18 +4250,16 @@
       <!-- Determine class according to level -->
 
 
-  
-
 
 <!-- Main navigation item with nested items -->
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
 
     <!-- Active checkbox expands items contained within nested section -->
 	  
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6"
-          type="checkbox" id="nav-6" checked />
+          type="checkbox" id="nav-6" />
     
 
     <!-- Expand active pages -->
@@ -4294,136 +4290,6 @@
       Tips and Tricks
     </a>
   </li>
-
-        
-          
-          
-          <!-- Determine class according to level -->
-
-
-  
-
-
-<!-- Main navigation item with nested items -->
-
-  <li class="md-nav__item md-nav__item--active">
-    
-
-    <!-- Active checkbox expands items contained within nested section -->
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
-        type="checkbox" id="__toc" />
-
-    <!-- Hack: see partials/toc.html for more information -->
-    
-      
-    
-
-    <!-- Render table of contents, if not empty -->
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Diagonal Input Fix
-      </label>
-    
-    <a href="./" title="Diagonal Input Fix"
-        class="md-nav__link md-nav__link--active">
-      Diagonal Input Fix
-    </a>
-
-    <!-- Show table of contents -->
-    
-      
-
-<!-- Table of contents -->
-<nav class="md-nav md-nav--secondary">
-  
-  <!--
-    Hack: check whether the content contains a h1 headline. If it does, the
-    top-level anchor must be skipped, since it would be redundant to the link
-    to the current page that is located just above the anchor. Therefore we
-    directly continue with the children of the anchor.
-  -->
-  
-    
-  
-
-  <!-- Render item list -->
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#user-options" class="md-nav__link">
-		User Options
-	</a>
-	
-	<!-- Render nested item list -->
-	
-</li>
-      
-        <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#faq" class="md-nav__link">
-		F.A.Q.
-	</a>
-	
-	<!-- Render nested item list -->
-	
-	<nav class="md-nav">
-		<ul class="md-nav__list">
-			 <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#does-this-produce-any-input-latency" class="md-nav__link">
-		Does this produce any input latency?
-	</a>
-	
-	<!-- Render nested item list -->
-	
-</li>  <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#how-does-this-work-on-4-way-only-joysticks" class="md-nav__link">
-		How does this work on 4-way-only joysticks?
-	</a>
-	
-	<!-- Render nested item list -->
-	
-</li> 
-		</ul>
-	</nav>
-	
-</li>
-      
-        <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#developer-options" class="md-nav__link">
-		Developer Options
-	</a>
-	
-	<!-- Render nested item list -->
-	
-</li>
-      
-        <!-- Table of contents item -->
-<li class="md-nav__item">
-	<a href="#implementation" class="md-nav__link">
-		Implementation
-	</a>
-	
-	<!-- Render nested item list -->
-	
-</li>
-      
-
-      <!-- Source files -->
-      
-		
-    </ul>
-  
-</nav>
-    
-  </li>
-
-<!-- Main navigation item -->
 
         
           
@@ -5002,40 +4868,6 @@
       
         
 <footer class="md-footer">
-	
-	<div class="md-footer-nav">
-		<nav class="md-footer-nav__inner md-grid">
-			
-			<a href="../tips-tricks/" title="Tips and Tricks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-				<div class="md-flex__cell md-flex__cell--shrink">
-					<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-				</div>
-				<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Tips and Tricks
-              </span>
-				</div>
-			</a>
-			 
-			<a href="../videos/" title="Videos" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-				<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Videos
-              </span>
-				</div>
-				<div class="md-flex__cell md-flex__cell--shrink">
-					<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-				</div>
-			</a>
-			
-		</nav>
-	</div>
 	
 </footer>
       
